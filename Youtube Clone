@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .search-bar {
+            display: flex;
+            flex-grow: 1;
+            max-width: 600px;
+            margin: 0 30px;
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #d3d3d3;
+            border-right: none;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #d3d3d3;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .user-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icons div {
+            margin-left: 20px;
+        }
+
+        /* Sidebar Styles */
+        .main-container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: white;
+            padding: 15px;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .sidebar-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar-item img {
+            width: 24px;
+            margin-right: 15px;
+        }
+
+        /* Video Grid Styles */
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            flex-grow: 1;
+            background-color: #f9f9f9;
+        }
+
+        .video-card {
+            width: 250px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 140px;
+            background-color: #d3d3d3;
+        }
+
+        .video-info {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .channel-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #a0a0a0;
+            margin-right: 10px;
+        }
+
+        .video-details {
+            flex-grow: 1;
+        }
+
+        .video-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .video-metadata {
+            color: #606060;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="/api/placeholder/40/40" alt="YouTube Logo">
+            <h2>YouTube</h2>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>🔍</button>
+        </div>
+        <div class="user-icons">
+            <div>🎥</div>
+            <div>📱</div>
+            <div>🔔</div>
+            <div>👤</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <img src="/api/placeholder/24/24" alt="Home">
+                Home
+            </div>
+            <div class="sidebar-item">
+                <img src="/api/placeholder/24/24" alt="Shorts">
+                Shorts
+            </div>
+            <div class="sidebar-item">
+                <img src="/api/placeholder/24/24" alt="Subscriptions">
+                Subscriptions
+            </div>
+            <hr>
+            <div class="sidebar-item">
+                <img src="/api/placeholder/24/24" alt="Library">
+                Library
+            </div>
+            <div class="sidebar-item">
+                <img src="/api/placeholder/24/24" alt="History">
+                History
+            </div>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="video-grid">
+            <!-- Video Card 1 -->
+            <div class="video-card">
+                <div class="video-thumbnail"></div>
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+                    <div class="video-details">
+                        <div class="video-title">Amazing Video Title</div>
+                        <div class="video-metadata">Channel Name • 1M views • 2 days ago</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat video card 5-6 times to simulate a grid -->
+            <div class="video-card">
+                <div class="video-thumbnail"></div>
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+                    <div class="video-details">
+                        <div class="video-title">Another Awesome Video</div>
+                        <div class="video-metadata">Creator Channel • 500K views • 5 days ago</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail"></div>
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+                    <div class="video-details">
+                        <div class="video-title">Educational Content</div>
+                        <div class="video-metadata">Learning Channel • 250K views • 1 week ago</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail"></div>
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+                    <div class="video-details">
+                        <div class="video-title">Tech Review</div>
+                        <div class="video-metadata">Tech Guru • 750K views • 3 days ago</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail"></div>
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+                    <div class="video-details">
+                        <div class="video-title">Gaming Highlights</div>
+                        <div class="video-metadata">Gaming Channel • 2M views • 1 day ago</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-thumbnail"></div>
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+                    <div class="video-details">
+                        <div class="video-title">Music Performance</div>
+                        <div class="video-metadata">Music Studio • 300K views • 4 days ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
